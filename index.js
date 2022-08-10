@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import router from './src/router.js';
 
 const PORT = process.env.PORT || 5000;
-
+const DB = process.env.DATABASE_URL;
 const app = express();
 
 app.use(express.json());
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 async function startApp() {
     try {
-        //await mongoose.connect(DB, {});
+        await mongoose.connect(DB, {});
         app.listen(PORT, () => console.log('started'));
     } catch (e) {
         console.log(e);
