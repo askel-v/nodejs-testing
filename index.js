@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 async function startApp() {
     try {
         //await mongoose.connect(DB, {});
-        app.listen(PORT, 'localhost', () => console.log('started'));
+        app.listen(PORT, () => console.log('started'));
     } catch (e) {
         console.log(e);
     }
